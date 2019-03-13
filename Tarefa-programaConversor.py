@@ -116,7 +116,7 @@ def hexaParaOct(numHex):
 	octal = decParaOct(hexParaDec(numHex))
 	return octal
 
-print """		OPCOES DISPONIVEIS
+print("""		OPCOES DISPONIVEIS
 	1   binario
 	2   octal
  	3   decimal
@@ -124,7 +124,7 @@ print """		OPCOES DISPONIVEIS
  	9   exibir operações validas
  	0   encerrar programa
 	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
-	"""
+""")
 
 escolha1 = ' '
 escolha2 = ' '
