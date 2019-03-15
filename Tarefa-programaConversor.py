@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-#Escrito e compilado em python 2.7
+#Escrito e compilado em python 3.7
 #
 # Tarefa: criar conversor decimal-binario-hexadecimal-octadecimal
 # 2 integrantes - data para entrega: 06/abril
@@ -130,61 +130,78 @@ escolha1 = ' '
 escolha2 = ' '
 
 while (escolha1 != '0' and escolha2 != '0'):	
-	escolha1 = raw_input("Insira a opcao escolhida ou a base da entrada: ")
+	escolha1 = str(input("Insira a opcao escolhida ou a base da entrada: "))
 	if(escolha1 == '0'):
 		escolha2 = '0'
-		print "Programa encerrado\n"
+		print("Programa encerrado\n")
 	elif (escolha1 == '9'):
-		print """		 OPCOES DISPONIVEIS
+		print("""		 OPCOES DISPONIVEIS
 	1   binario
 	2   octal
  	3   decimal
  	4   hexadecimal
  	9   exibir operações validas
  	0   encerrar programa
-	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
-	"""
+	""")
 	elif (escolha1 != '1' and escolha1 != '2' and escolha1 != '3' and escolha1 != '4'):
-		print "Insira uma opcao ou base valida.\n"
+		print("Insira uma opcao ou base valida.\n")
+
 	else:
-		escolha2 = raw_input("Insira a base da saida: ")
+		escolha2 = str(input("Insira a base da saida: "))
+		
 		if(escolha1 == escolha2):
-			print "Insira base e saida diferentes.\n"
+			print ("Insira base e saida diferentes.\n")
+		
 		elif(escolha1 == '1' and escolha2 == '2'):
-			entrada = input("binario:")
-			print "Valor octadecimal:" , (binParaOct(entrada)) , "\n"
+			entrada = int(input("binario:"))
+			print ("Valor octadecimal:" , (binParaOct(entrada)) , "\n")
+		
 		elif(escolha1 == '1' and escolha2 == '3'):
-			entrada = input("binario:")
-			print "Valor decimal:" , (binParaDec(entrada)) , "\n"
+			entrada = int(input("binario:"))
+			print ("Valor decimal:" , (binParaDec(entrada)) , "\n")
+		
 		elif(escolha1 == '1' and escolha2 == '4'):
-			entrada = input("binario:")
-			print "Valor hexadecimal:" , (binParaHex(entrada)) , "\n"
+			entrada = int(input("binario:"))
+			print ("Valor hexadecimal:" , (binParaHex(entrada)) , "\n")
+		
 		elif(escolha1 == '2' and escolha2 == '1'):
-			entrada = input("octal:")
-			print "Valor binario:" , (octParaBin(entrada)) , "\n"
+			entrada = int(input("octal:"))
+			print ("Valor binario:" , (octParaBin(entrada)) , "\n")
+		
 		elif(escolha1 == '2' and escolha2 == '3'):
-			entrada = input("octal:")
-			print "Valor decimal:" , (octParaDec(entrada)) , "\n"
+			entrada = int(input("octal:"))
+			print ("Valor decimal:" , (octParaDec(entrada)) , "\n")
+		
 		elif(escolha1 == '2' and escolha2 == '4'):
-			entrada = input("octal:")
-			print "Valor hexadecimal:" , octParaHexa(entrada) , "\n"
+			entrada = int(input("octal:"))
+			print ("Valor hexadecimal:" , octParaHexa(entrada) , "\n")
+		
 		elif(escolha1 == '3' and escolha2 == '1'):
-			entrada = input("decimal:")
-			print "Valor binario:" , decParaBin(entrada) , "\n"
+			entrada = int(input("decimal:"))
+			print ("Valor binario:" , decParaBin(entrada) , "\n")
+		
 		elif(escolha1 == '3' and escolha2 == '2'):
-			entrada = input("decimal:")
-			print "Valor octadecimal:" , decParaOct(entrada) , "\n"
+			entrada = int(input("decimal:"))
+			print ("Valor octadecimal:" , decParaOct(entrada) , "\n")
+		
 		elif(escolha1 == '3' and escolha2 == '4'):
-			entrada = input("decimal:")
-			print "Valor hexadecimal:" , decParaHex(entrada) , "\n"
+			entrada = int(input("decimal:"))
+			print ("Valor hexadecimal:" , decParaHex(entrada) , "\n")
+		
 		elif(escolha1 == '4' and escolha2 == '1'):
-			entrada = raw_input("hexadecimal:")
-			print "Valor binario:" , hexParaBin(entrada) , "\n"
+			entrada = str(input("hexadecimal:"))
+			entrada = entrada.upper()
+			print ("Valor binario:" , hexParaBin(entrada) , "\n")
+		
 		elif(escolha1 == '4' and escolha2 == '2'):
-			entrada = raw_input("hexadecimal:")
-			print "Valor octadecimal:" , hexaParaOct(entrada) , "\n"
+			entrada = str(input("hexadecimal:"))
+			entrada = entrada.upper()
+			print ("Valor octadecimal:" , hexaParaOct(entrada) , "\n")
+		
 		elif(escolha1 == '4' and escolha2 == '3'):
-			entrada = raw_input("hexadecimal:")
-			print "Valor decimal:" , hexParaDec(entrada) , "\n"
+			entrada = str(input("hexadecimal:"))
+			entrada = entrada.upper()
+			print ("Valor decimal:" , hexParaDec(entrada) , "\n")
+
 		else:
-			print "Insira bases validas."
+			print ("Insira bases validas.")
